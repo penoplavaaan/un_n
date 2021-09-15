@@ -21,8 +21,8 @@ while not _isOver:
         row = int(place_num.split('_')[0])-1
         col = int(place_num.split('_')[1])-1
 
-        if mesta[row, col] == 0:
-            print("МЕСТО ЗАНЯТО")
+        if mesta[row][col] == 0:
+            print("МЕСТО НЕ ЗАНЯТО")
         else:
-            print('МЕСТО НЕ ЗАНЯТО')
+            print('МЕСТО ЗАНЯТО')
 
