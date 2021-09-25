@@ -37,6 +37,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Pixel.cs" />
     <Compile Include="Filters\ParameterInfo.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Window\MainWindow.cs">
@@ -55,5 +56,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tasks.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Window\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
