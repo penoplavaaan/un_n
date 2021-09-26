@@ -45,6 +45,17 @@ namespace Incapsulation.Failures
         /// <param name="times"></param>
         /// <param name="devices"></param>
         /// <returns></returns>
+        /// 
+
+        private readonly Date[,,] date;
+
+        public Date this[int day, int month, int year]
+        {
+            get { return date[day, month, year]; }
+
+            set { date[day, month, year] = value; }
+        }
+
         public static List<string> FindDevicesFailedBeforeDateObsolete(
             int day,
             int month,
@@ -54,19 +65,56 @@ namespace Incapsulation.Failures
             object[][] times,
             List<Dictionary<string, object>> devices)
         {
+            
+            
+            return FindDevicesFailedBeforeDate();
+        }
 
+        static List<string> FindDevicesFailedBeforeDate()
+        {
             var problematicDevices = new HashSet<int>();
             for (int i = 0; i < failureTypes.Length; i++)
-                if (Common.IsFailureSerious(failureTypes[i])==1 && Common.Earlier(times[i], day, month, year)==1)
+                if (Common.IsFailureSerious(failureTypes[i]) == 1 && Common.Earlier(times[i], day, month, year) == 1)
                     problematicDevices.Add(deviceId[i]);
 
             var result = new List<string>();
             foreach (var device in devices)
                 if (problematicDevices.Contains((int)device["DeviceId"]))
                     result.Add(device["Name"] as string);
-
-            return result;
         }
-           
     }
+
+    public struct Date
+    {
+        public Date(int day, int month, int year)
+        {
+            this.day = this.month = this.year = 0;
+            this.Day = day;
+            this.Month = month;
+            this.Year = year;
+        }
+
+        int day;
+        public int Day
+        {
+            get { return day; }
+            set { day = value; }
+        }
+
+        int month;
+        public int Month
+        {
+            get { return month; }
+            set { month = value; }
+        }
+
+        int year;
+        public int Year
+        {
+            get { return year; }
+            set { year = value; }
+        }
+    }
+
+    
 }

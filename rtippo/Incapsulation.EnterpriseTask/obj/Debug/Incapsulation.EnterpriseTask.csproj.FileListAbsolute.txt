@@ -1,0 +1,9 @@
+C:\un_n\rtippo\Incapsulation.EnterpriseTask\bin\Debug\Incapsulation.Enterprise.dll.config
+C:\un_n\rtippo\Incapsulation.EnterpriseTask\bin\Debug\Incapsulation.Enterprise.dll
+C:\un_n\rtippo\Incapsulation.EnterpriseTask\bin\Debug\Incapsulation.Enterprise.pdb
+C:\un_n\rtippo\Incapsulation.EnterpriseTask\bin\Debug\nunit.framework.dll
+C:\un_n\rtippo\Incapsulation.EnterpriseTask\obj\Debug\Incapsulation.EnterpriseTask.csproj.AssemblyReference.cache
+C:\un_n\rtippo\Incapsulation.EnterpriseTask\obj\Debug\Incapsulation.EnterpriseTask.csproj.CoreCompileInputs.cache
+C:\un_n\rtippo\Incapsulation.EnterpriseTask\obj\Debug\Incapsulation.EnterpriseTask.csproj.CopyComplete
+C:\un_n\rtippo\Incapsulation.EnterpriseTask\obj\Debug\Incapsulation.Enterprise.dll
+C:\un_n\rtippo\Incapsulation.EnterpriseTask\obj\Debug\Incapsulation.Enterprise.pdb
