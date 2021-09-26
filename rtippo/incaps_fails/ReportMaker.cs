@@ -57,20 +57,20 @@ namespace Incapsulation.Failures
         }
 
         public static List<string> FindDevicesFailedBeforeDateObsolete(
-            int day,
-            int month,
-            int year,
+            int day,//
+            int month,//
+            int year,//
             int[] failureTypes, 
             int[] deviceId, 
             object[][] times,
             List<Dictionary<string, object>> devices)
         {
+            Date date = [day, month, year];
             
-            
-            return FindDevicesFailedBeforeDate();
+            return FindDevicesFailedBeforeDate(date);
         }
 
-        static List<string> FindDevicesFailedBeforeDate()
+        static List<string> FindDevicesFailedBeforeDate(Date date)
         {
             var problematicDevices = new HashSet<int>();
             for (int i = 0; i < failureTypes.Length; i++)
@@ -81,6 +81,8 @@ namespace Incapsulation.Failures
             foreach (var device in devices)
                 if (problematicDevices.Contains((int)device["DeviceId"]))
                     result.Add(device["Name"] as string);
+
+            return result;
         }
     }
 
