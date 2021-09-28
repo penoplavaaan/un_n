@@ -82,12 +82,12 @@ def add():
     products.append(new_product)
 
 def remove(id_or_name):
-    if(id_or_name.isdigit()):
+    if(id_or_name.isdigit()): 
         id_del = 0
         for product in products:
-            if(product['id'] == id_or_name):
+            if(str(product['id']) == id_or_name):
                 products.pop(id_del)
-                break
+                break 
             id_del += 1
     else:
         id_del = 0
@@ -96,16 +96,16 @@ def remove(id_or_name):
                 products.pop(id_del)
                 break
             id_del += 1
-#remove("Картофель")
+#obj_print(products)
 
 def find(id_or_name):
-    if(id_or_name.isdigit()):
+    if(id_or_name.isdigit()): 
         id_find = 0
         for product in products:
-            if(product['id'] == id_or_name):
+            if(str(product['id']) == id_or_name): 
                 print(products[id_find])
                 break
-            id_find += 1
+            id_find += 1 
     else:
         id_find = 0
         for product in products:
@@ -133,6 +133,8 @@ def mean_attr(attr):
     print(mean)
 #mean_attr('')
 
+def smth_wrong():
+    print('-------\nЧто-то пошло не так. Повторите!\n-------\n')
 
 _isOver = False
 while not _isOver:
@@ -150,20 +152,23 @@ while not _isOver:
     elif choice == '1':
         add()
     elif choice == '2':
-        id_or_name_remove = input('Введите ID или название товара')
+        id_or_name_remove = input('Введите ID или название товара: ')
         remove(id_or_name_remove)
     elif choice == '3':
-        id_or_name_find = input('Введите ID или название товара')
+        id_or_name_find = input('Введите ID или название товара: ')
         find(id_or_name_find)
     elif choice == '4':
         obj_print(products)
     elif choice == '5':
-        greater_less_equal = input('Введите знак сравнения (>, <, ==)')
-        value = input('Введите значение')
+        greater_less_equal = input('Введите знак сравнения (>, <, ==) ')
+
+        value = input('Введите значение: ')
         filter_price(greater_less_equal, value)
     elif choice == '6':
-        attr = input('Введите атрибут для среднего значения')
+        attr = input('Введите атрибут для среднего значения: ')
         mean_attr(attr)
+    else:
+        smth_wrong()
 
 
 
