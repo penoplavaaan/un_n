@@ -60,27 +60,36 @@ def add():
     new_product_price = input('\nВведите цену: ')
     new_product_weight = input('\nВведите вес: ')
     new_product_k = input('\nВведите калорийность: ')
+    new_product_b = input('\nВведите содержание белков: ')
+    new_product_z = input('\nВведите содержание жиров: ')
+    new_product_u = input('\nВведите содержание углеводов: ')
+    new_product_av_am = input('\nВведите доступное количество: ')
+    new_product_disc = input('\nНа продукт действует скидка?(Y/n)')
+    if new_product_disc == 'Y': 
+        new_product_disc = True
+    else:
+        new_product_disc == False
 
     new_product = {
         'id': new_product_id,
         'name': new_product_name,
         'price': new_product_price,
         'weight': new_product_weight,
-        'kbzu': [15, 30, 40, 50],
-        'number': 60,
-        'discount': False
+        'kbzu': [new_product_k, new_product_b, new_product_z, new_product_u],
+        'number': new_product_av_am,
+        'discount': new_product_disc
     }
     products.append(new_product)
 
 def remove(id_or_name):
-    if(type(id_or_name) == int):
+    if(id_or_name.isdigit()):
         id_del = 0
         for product in products:
             if(product['id'] == id_or_name):
                 products.pop(id_del)
                 break
             id_del += 1
-    elif(type(id_or_name) == str):
+    else:
         id_del = 0
         for product in products:
             if(product['name'] == id_or_name):
@@ -90,14 +99,14 @@ def remove(id_or_name):
 #remove("Картофель")
 
 def find(id_or_name):
-    if(type(id_or_name) == int):
+    if(id_or_name.isdigit()):
         id_find = 0
         for product in products:
             if(product['id'] == id_or_name):
                 print(products[id_find])
                 break
             id_find += 1
-    elif(type(id_or_name) == str):
+    else:
         id_find = 0
         for product in products:
             if(product['name'] == id_or_name):
@@ -122,7 +131,7 @@ def mean_attr(attr):
         sum_attr += product[attr] 
     mean = sum_attr/quant
     print(mean)
-mean_attr('number')
+#mean_attr('')
 
 
 _isOver = False
@@ -139,10 +148,22 @@ while not _isOver:
     if choice == '0':
         _isOver = not _isOver
     elif choice == '1':
-        new_product = []
-        new_product_id = input('\nВведите ID: ')
-        new_product_name = input('\nВведите название')
-        new_product_ = input('\nВведите цену')
+        add()
+    elif choice == '2':
+        id_or_name_remove = input('Введите ID или название товара')
+        remove(id_or_name_remove)
+    elif choice == '3':
+        id_or_name_find = input('Введите ID или название товара')
+        find(id_or_name_find)
+    elif choice == '4':
+        obj_print(products)
+    elif choice == '5':
+        greater_less_equal = input('Введите знак сравнения (>, <, ==)')
+        value = input('Введите значение')
+        filter_price(greater_less_equal, value)
+    elif choice == '6':
+        attr = input('Введите атрибут для среднего значения')
+        mean_attr(attr)
 
 
 
@@ -152,4 +173,4 @@ while not _isOver:
 
 
 
-#obj_print(products)
+
