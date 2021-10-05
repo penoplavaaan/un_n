@@ -9,11 +9,7 @@ namespace Incapsulation.Failures
 
     public class Common
     {
-        public static int IsFailureSerious(int failureType)
-        {
-            if (failureType%2==0) return 1;
-            return 0;
-        }
+        
 
 
         public static int Earlier(object[] v, int day, int month, int year)
@@ -45,37 +41,33 @@ namespace Incapsulation.Failures
         /// <param name="times"></param>
         /// <param name="devices"></param>
         /// <returns></returns>
-        /// 
 
-        private readonly Date[,,] date;
-
-        public Date this[int day, int month, int year]
-        {
-            get { return date[day, month, year]; }
-
-            set { date[day, month, year] = value; }
-        }
 
         public static List<string> FindDevicesFailedBeforeDateObsolete(
             int day,//
             int month,//
             int year,//
-            int[] failureTypes, 
+            int[] failureTypes,//
             int[] deviceId, 
             object[][] times,
             List<Dictionary<string, object>> devices)
         {
-            Date date = [day, month, year];
+            Date date = new Date(day,month,year);
+
+            Failure failureType = new Failure(failureTypes);
+
+            DeviceID deviceIDs = new DeviceID(deviceId);
+
             
-            return FindDevicesFailedBeforeDate(date);
+            return FindDevicesFailedBeforeDate(date, failureType, deviceIDs);
         }
 
-        static List<string> FindDevicesFailedBeforeDate(Date date)
+        static List<string> FindDevicesFailedBeforeDate(Date date, Failure failure, DeviceID deviceIDs)
         {
             var problematicDevices = new HashSet<int>();
-            for (int i = 0; i < failureTypes.Length; i++)
-                if (Common.IsFailureSerious(failureTypes[i]) == 1 && Common.Earlier(times[i], day, month, year) == 1)
-                    problematicDevices.Add(deviceId[i]);
+            for (int i = 0; i < failure.Length; i++)
+                if (Failure.IsFailureSerious(failure[i]) && Common.Earlier(times[i], date.Day, date.Month, date.Year) == 1)
+                    problematicDevices.Add(deviceIDs[i]);
 
             var result = new List<string>();
             foreach (var device in devices)
@@ -118,5 +110,59 @@ namespace Incapsulation.Failures
         }
     }
 
-    
+    public struct Failure
+    {
+        public Failure(int[] failureTypes)
+        {
+            this.failureTypes = failureTypes;
+        }
+
+        int[] failureTypes;
+        public int[] FailureTypes
+        {
+            get { return failureTypes; }
+            set { failureTypes = value; }
+        }
+
+        public int Length
+        {
+            get { return failureTypes.Length; }
+        }
+
+        public int this[int ind]
+        {
+            get { return failureTypes[ind]; }
+        }
+
+        public static bool IsFailureSerious(int failureType)
+        {
+            if (failureType % 2 == 0) return true;
+            return false;
+        }
+    }
+
+    public struct DeviceID
+    {
+        public DeviceID(int[] devices)
+        {
+            this.deviceIDs = devices;
+        }
+
+
+        int[] deviceIDs;
+        public int[] DeviceIDs
+        {
+            get { return deviceIDs; }
+            set { deviceIDs = value; }
+        }
+
+        public int this[int ind]
+        {
+            get { return deviceIDs[ind]; }
+        }
+
+
+    }
+
+
 }
