@@ -9,3 +9,14 @@ C:\un\rtippo\incaps_fails\obj\Debug\Incapsulation.Failures.csproj.CoreCompileInp
 C:\un\rtippo\incaps_fails\obj\Debug\Incapsulation.Failures.csproj.CopyComplete
 C:\un\rtippo\incaps_fails\obj\Debug\Incapsulation.Failures.exe
 C:\un\rtippo\incaps_fails\obj\Debug\Incapsulation.Failures.pdb
+C:\un_n\rtippo\incaps_fails\bin\Debug\ReportMaker.cs
+C:\un_n\rtippo\incaps_fails\bin\Debug\Incapsulation.Failures.exe.config
+C:\un_n\rtippo\incaps_fails\bin\Debug\Incapsulation.Failures.exe
+C:\un_n\rtippo\incaps_fails\bin\Debug\Incapsulation.Failures.pdb
+C:\un_n\rtippo\incaps_fails\bin\Debug\nunit.framework.dll
+C:\un_n\rtippo\incaps_fails\bin\Debug\nunitlite.dll
+C:\un_n\rtippo\incaps_fails\obj\Debug\Incapsulation.Failures.csproj.AssemblyReference.cache
+C:\un_n\rtippo\incaps_fails\obj\Debug\Incapsulation.Failures.csproj.CoreCompileInputs.cache
+C:\un_n\rtippo\incaps_fails\obj\Debug\Incapsulation.Failures.csproj.CopyComplete
+C:\un_n\rtippo\incaps_fails\obj\Debug\Incapsulation.Failures.exe
+C:\un_n\rtippo\incaps_fails\obj\Debug\Incapsulation.Failures.pdb

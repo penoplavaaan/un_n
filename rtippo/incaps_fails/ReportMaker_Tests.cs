@@ -19,7 +19,9 @@ namespace Incapsulation.Failures
                 new int[] { },
                 new object[][] { },
                 new List<Dictionary<string, object>>());
+            Console.WriteLine("NoDevices");
             CollectionAssert.IsEmpty(result);
+
         }
 
         [Test]
@@ -61,8 +63,9 @@ namespace Incapsulation.Failures
                         ["Name"]="3"
                     },
                  });
+            Console.WriteLine("FilterSingleDevice");
 
-            CollectionAssert.AreEqual(new[] { "0" }, result);
+            CollectionAssert.AreEqual(new[] { "0" }, result); 
         }
 
         [Test]
@@ -104,8 +107,8 @@ namespace Incapsulation.Failures
                         ["Name"]="Device D"
                     },
                 });
-
-            CollectionAssert.AreEqual(new[] { "Device A", "Device C" }, result);
+            Console.WriteLine("FilterManyDevices");
+            CollectionAssert.AreEqual(new[] { "Device A", "Device C" }, result); 
         }
     }
 }
