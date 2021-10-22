@@ -10,7 +10,7 @@ namespace Incapsulation.EnterpriseTask
     {
         Guid guid;
 
-        public Guid getGuid() { return guid; }
+        public Guid GetGuid() { return guid; }
 
         public Enterprise(Guid guid)
         {
@@ -19,15 +19,15 @@ namespace Incapsulation.EnterpriseTask
 
         string name;
 
-        public string getName() { return name; }
+        public string GetName() { return name; }
 
-        public void setName(string name) { this.name = name; }
+        public void SetName(string name) { this.name = name; }
 
         string inn;
 
-        public string getINN() { return inn; }
+        public string GetINN() { return inn; }
 
-        public void setINN(string inn)
+        public void SetINN(string inn)
         {
             if (inn.Length != 10 || !inn.All(z => char.IsDigit(z)))
                 throw new ArgumentException();
@@ -36,22 +36,22 @@ namespace Incapsulation.EnterpriseTask
 
         DateTime establishDate;
 
-        public DateTime getEstablishDate()
+        public DateTime GetEstablishDate()
         {
             return establishDate;
         }
 
-        public void setEstablishDate(DateTime establishDate)
+        public void SetEstablishDate(DateTime establishDate)
         {
             this.establishDate = establishDate;
         }
 
-        public TimeSpan getActiveTimeSpan()
+        public TimeSpan GetActiveTimeSpan()
         {
             return DateTime.Now - establishDate;
         }
 
-        public double getTotalTransactionsAmount()
+        public double GetTotalTransactionsAmount()
         {
             DataBase.OpenConnection();
             var amount = 0.0;
