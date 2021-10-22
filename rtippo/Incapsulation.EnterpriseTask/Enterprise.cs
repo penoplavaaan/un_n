@@ -8,44 +8,34 @@ namespace Incapsulation.EnterpriseTask
 {
     public class Enterprise
     {
-        Guid guid;
-
-        public Guid GetGuid() { return guid; }
-
-        public Enterprise(Guid guid)
+        public readonly Guid guid;
+        public  Guid Guid
         {
-            this.guid = guid;
+            get { return guid; } 
+        } 
+
+        private string name;
+        public string Name { get; set; } 
+
+        private string inn;
+        public string Inn
+        {
+            get { return inn; }
+            set {
+                if (value.Length != 10 || !value.All(z => char.IsDigit(z)))
+                    throw new ArgumentException();
+                inn = value;
+            }
         }
 
-        string name;
+        private DateTime establishDate;
+        public DateTime EstablishDate { get; set; }
 
-        public string GetName() { return name; }
-
-        public void SetName(string name) { this.name = name; }
-
-        string inn;
-
-        public string GetINN() { return inn; }
-
-        public void SetINN(string inn)
+         
+        public TimeSpan ActiveTimeSpan
         {
-            if (inn.Length != 10 || !inn.All(z => char.IsDigit(z)))
-                throw new ArgumentException();
-            this.inn = inn;
+            get { return DateTime.Now - establishDate; }
         }
-
-        DateTime establishDate;
-
-        public DateTime GetEstablishDate()
-        {
-            return establishDate;
-        }
-
-        public void SetEstablishDate(DateTime establishDate)
-        {
-            this.establishDate = establishDate;
-        }
-
         public TimeSpan GetActiveTimeSpan()
         {
             return DateTime.Now - establishDate;

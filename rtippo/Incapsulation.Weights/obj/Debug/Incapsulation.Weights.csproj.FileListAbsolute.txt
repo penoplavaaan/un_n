@@ -1,0 +1,2 @@
+C:\un_n\rtippo\Incapsulation.Weights\obj\Debug\Incapsulation.Weights.csproj.AssemblyReference.cache
+C:\un_n\rtippo\Incapsulation.Weights\obj\Debug\Incapsulation.Weights.csproj.CoreCompileInputs.cache
