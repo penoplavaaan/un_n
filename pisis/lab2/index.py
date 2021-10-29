@@ -56,6 +56,10 @@ def obj_print(obj):
 def add():
     new_product = {}
     new_product_id = input('\nВведите ID: ')
+    for product in products:
+            if(str(product['id']) == new_product_id): 
+                smth_wrong()
+                return
     new_product_name = input('\nВведите название: ')
     new_product_price = input('\nВведите цену: ')
     new_product_weight = input('\nВведите вес: ')
