@@ -14,6 +14,7 @@ namespace Incapsulation.Weights
             // 1, [ 2, 3, ] 4
             var indexer = new Indexer(range1to4, start:1, length:2);
             Assert.AreEqual(2, indexer.Length);
+            Console.WriteLine("HaveCorrectLength passed"); 
         }
 
         [TestCase(0, 2)]
@@ -22,6 +23,7 @@ namespace Incapsulation.Weights
         {
             var indexer = new Indexer(range1to4, 1, 2);
             Assert.AreEqual(value, indexer[index]);
+            Console.WriteLine("GetCorrectly passed");
         }
 
         [TestCase(0)]
@@ -31,6 +33,7 @@ namespace Incapsulation.Weights
             var indexer = new Indexer(range1to4, 1, 2);
             indexer[index] = 10;
             Assert.AreEqual(10, range1to4[1 + index]);
+            Console.WriteLine("SetCorrectly passed");
         }
 
         [Test]
@@ -42,6 +45,7 @@ namespace Incapsulation.Weights
             var indexer2 = new Indexer(range1to4, 0, 2);
             indexer1[0] = 100500;
             Assert.AreEqual(100500, indexer2[1]);
+            Console.WriteLine("IndexerDoesNotCopyArray passed");
         }
 
         [TestCase(-1, 3)]
@@ -56,6 +60,7 @@ namespace Incapsulation.Weights
         {
             Assert.Catch<ArgumentException>(() => new Indexer(range1to4, start, length), 
                 "Constructor should throw ArgumentException, when range is invalid!\n");
+            Console.WriteLine("ConstructorFails_WhenRangeIsInvalid passed");
         }
 
         [TestCase(0, 0)]
@@ -70,6 +75,7 @@ namespace Incapsulation.Weights
         public void ConstructorNotFail_WhenRangeIsValid(int start, int length)
         {
             new Indexer(range1to4, start, length);
+            Console.WriteLine("ConstructorNotFail_WhenRangeIsValid passed");
         }
 
         [TestCase(-1)]
@@ -78,6 +84,7 @@ namespace Incapsulation.Weights
         {
             var indexer = new Indexer(range1to4, 1, 2);
             Assert.Throws(typeof(IndexOutOfRangeException), () => { var a = indexer[index]; });
+            Console.WriteLine("IndexerGetter_Fails_WhenIndexIsWrong passed");
         }
 
         [TestCase(-1)]
@@ -86,6 +93,7 @@ namespace Incapsulation.Weights
         {
             var indexer = new Indexer(range1to4, 1, 2);
             Assert.Throws(typeof(IndexOutOfRangeException), () => { indexer[index] = 1; });
+            Console.WriteLine("IndexerSetter_Fails_WhenIndexIsWrong passed");
         }
     }
 }
