@@ -23,7 +23,7 @@ namespace Incapsulation.Weights
                     }
                     else
                     {
-                        array = new double[this.length];
+                        array = arr;
                     }
                     
                 }
@@ -59,12 +59,7 @@ namespace Incapsulation.Weights
             }  
         }
 
-        private double[] array;
-        public double[] Array
-        {
-            get { return array; }
-            set {  array = ref value; }
-        }
+        private double[] array; 
 
         private int start;
         public int Start
@@ -89,7 +84,7 @@ namespace Incapsulation.Weights
 
         public int Length
         {
-            get { return array.Length; }
+            get { return this.length; }
         }
     }
 }
