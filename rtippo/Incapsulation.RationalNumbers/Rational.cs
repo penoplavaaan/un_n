@@ -6,5 +6,9 @@ using System.Threading.Tasks;
 
 namespace Incapsulation.RationalNumbers
 {
-    
+    public class Rational
+    {
+        private int Numerator;
+        
+    }
 }
