@@ -38,15 +38,15 @@ namespace Inheritance.DataStructure
         {
             var a = Descending();
             for (int i = 0; i < a.Length; i++)
-            for (int j = 0; j < a.Length; j++)
-                if (i != j)
-                {
-                    Assert.AreNotEqual(a[i].GetHashCode(), a[j].GetHashCode(), $"Error on {i} {j}");
-                    // Обычно от хеш-функции не требуется,
-                    // чтобы она возвращала разные значения на разных объектах.
-                    // Однако в этой задаче вам нужно сделать так,
-                    // чтобы на этом тесте разные объекты возвращали разные значений хеш-функций.
-                }
+                for (int j = 0; j < a.Length; j++)
+                    if (i != j)
+                    {
+                        Assert.AreNotEqual(a[i].GetHashCode(), a[j].GetHashCode(), $"Error on {i} {j}");
+                        // Обычно от хеш-функции не требуется,
+                        // чтобы она возвращала разные значения на разных объектах.
+                        // Однако в этой задаче вам нужно сделать так,
+                        // чтобы на этом тесте разные объекты возвращали разные значений хеш-функций.
+                    }
 
             Assert.True(A11.Equals(A11_copy));
         }
@@ -57,7 +57,11 @@ namespace Inheritance.DataStructure
             var a = Descending();
             for (int i = 0; i < a.Length; i++)
                 for (int j = 0; j < a.Length; j++)
-                    Assert.AreEqual(Math.Sign(i.CompareTo(j)), Math.Sign(a[i].CompareTo(a[j])), $"Error on {i} {j}");
+                    Assert.AreEqual(
+                        Math.Sign(i.CompareTo(j)), 
+                        Math.Sign(a[i].CompareTo(a[j])), 
+                        $"Error on {i} {j}"
+                        );
             Assert.AreEqual(0, A11.CompareTo(A11_copy));
         }
 
