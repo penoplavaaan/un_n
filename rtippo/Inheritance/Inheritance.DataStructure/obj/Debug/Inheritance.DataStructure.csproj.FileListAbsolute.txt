@@ -1,0 +1,10 @@
+C:\un_n\rtippo\Inheritance\Inheritance.DataStructure\bin\Debug\Inheritance.DataStructure.exe.config
+C:\un_n\rtippo\Inheritance\Inheritance.DataStructure\bin\Debug\Inheritance.DataStructure.exe
+C:\un_n\rtippo\Inheritance\Inheritance.DataStructure\bin\Debug\Inheritance.DataStructure.pdb
+C:\un_n\rtippo\Inheritance\Inheritance.DataStructure\bin\Debug\nunit.framework.dll
+C:\un_n\rtippo\Inheritance\Inheritance.DataStructure\bin\Debug\nunitlite.dll
+C:\un_n\rtippo\Inheritance\Inheritance.DataStructure\obj\Debug\Inheritance.DataStructure.csproj.AssemblyReference.cache
+C:\un_n\rtippo\Inheritance\Inheritance.DataStructure\obj\Debug\Inheritance.DataStructure.csproj.CoreCompileInputs.cache
+C:\un_n\rtippo\Inheritance\Inheritance.DataStructure\obj\Debug\Inheritance.DataStructure.csproj.CopyComplete
+C:\un_n\rtippo\Inheritance\Inheritance.DataStructure\obj\Debug\Inheritance.DataStructure.exe
+C:\un_n\rtippo\Inheritance\Inheritance.DataStructure\obj\Debug\Inheritance.DataStructure.pdb
