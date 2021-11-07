@@ -92,5 +92,18 @@ namespace Inheritance.DataStructure
         {
             Assert.AreEqual("A.Incoming.Subscribe", A11.ToString());
         }
+
+        Category CNULLNAME = new Category(null, 0, 0);
+        Category CN = null;
+        [Test]
+        public void NullsEqualCompere()
+        {
+            Assert.AreEqual(CN, null);
+            Assert.IsTrue(CN == null);
+            Assert.IsTrue(CN <= null);
+            Assert.IsTrue(CN >= null);
+            Assert.Zero(CNULLNAME.CompareTo(A11));
+            Assert.Zero(CNULLNAME.CompareTo(CN));
+        }
     }
 }
