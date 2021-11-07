@@ -31,8 +31,7 @@ namespace Inheritance.DataStructure
         {
             try
             {
-                Category a = obj as Category;
-                // Сначала сравниваем по Message
+                Category a = obj as Category; 
                 if (this.type.CompareTo(a.type) != 0) return this.type.CompareTo(a.type);
 
                 if (this.messageType.CompareTo(a.messageType) != 0) return this.messageType.CompareTo(a.messageType);
@@ -42,16 +41,9 @@ namespace Inheritance.DataStructure
             catch (NullReferenceException)
             {
                 return -1;
-            }
-
-            /*
-            if (this.type.CompareTo(a.type) != 0) return this.type.CompareTo(a.type);
-
-            if (this.messageType.CompareTo(a.messageType) != 0) return this.messageType.CompareTo(a.messageType);
-
-            return this.messageTopic.CompareTo(a.messageTopic);
-            */
+            } 
         }
+
         public override bool Equals(object obj)
         {
             return obj is Category && Equals(obj as Category); 
@@ -61,10 +53,7 @@ namespace Inheritance.DataStructure
         {
             return this == a;
         }
-
-
-
-
+         
         public static bool operator >(Category a, Category b)
         {
             return Math.Sign(a.CompareTo(b)) == 1;
@@ -94,7 +83,6 @@ namespace Inheritance.DataStructure
         {
             return Math.Sign(a.CompareTo(b)) != 0;
         }
-
     }
 
     interface IComparable

@@ -1,0 +1,10 @@
+C:\un_n\rtippo\Inheritance\Inheritance.MapObjects\obj\Debug\Inheritance.MapObjects.csproj.AssemblyReference.cache
+C:\un_n\rtippo\Inheritance\Inheritance.MapObjects\obj\Debug\Inheritance.MapObjects.csproj.CoreCompileInputs.cache
+C:\un_n\rtippo\Inheritance\Inheritance.MapObjects\bin\Debug\Inheritance.MapObjects.exe.config
+C:\un_n\rtippo\Inheritance\Inheritance.MapObjects\bin\Debug\Inheritance.MapObjects.exe
+C:\un_n\rtippo\Inheritance\Inheritance.MapObjects\bin\Debug\Inheritance.MapObjects.pdb
+C:\un_n\rtippo\Inheritance\Inheritance.MapObjects\bin\Debug\nunit.framework.dll
+C:\un_n\rtippo\Inheritance\Inheritance.MapObjects\bin\Debug\nunitlite.dll
+C:\un_n\rtippo\Inheritance\Inheritance.MapObjects\obj\Debug\Inheritance.MapObjects.csproj.CopyComplete
+C:\un_n\rtippo\Inheritance\Inheritance.MapObjects\obj\Debug\Inheritance.MapObjects.exe
+C:\un_n\rtippo\Inheritance\Inheritance.MapObjects\obj\Debug\Inheritance.MapObjects.pdb
