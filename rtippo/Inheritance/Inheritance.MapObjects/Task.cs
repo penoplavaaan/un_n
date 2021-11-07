@@ -27,7 +27,7 @@ namespace Inheritance.MapObjects
     }
 
 
-    public class Dwelling: IMapObject, IOwner
+    public class Dwelling: IMapObject
     {
         public int Owner { get; set; }
         public void Interact(Player player)
@@ -36,7 +36,7 @@ namespace Inheritance.MapObjects
         }
     }
 
-    public class Mine: IMapObject, IOwner,IArmy,ITreasure
+    public class Mine: IMapObject, IOwner,IArmy
     {
         public int Owner { get; set; }
         public Army Army { get; set; }
@@ -52,7 +52,7 @@ namespace Inheritance.MapObjects
         }
     }
 
-    public class Creeps :IMapObject, IArmy, ITreasure
+    public class Creeps :IMapObject, IArmy
     {
         public Army Army { get; set; }
         public Treasure Treasure { get; set; }
@@ -65,7 +65,7 @@ namespace Inheritance.MapObjects
         }
     }
 
-    public class Wolves :IArmy
+    public class Wolves : IMapObject
     {
         public Army Army { get; set; }
         public void Interact(Player player)
@@ -75,7 +75,7 @@ namespace Inheritance.MapObjects
         }
     }
 
-    public class ResourcePile :ITreasure
+    public class ResourcePile : IMapObject
     {
         public Treasure Treasure { get; set; }
         public void Interact(Player player)
@@ -91,7 +91,4 @@ namespace Inheritance.MapObjects
             mapObject.Interact(player);
         }
     }
-     
-
-    
 }
