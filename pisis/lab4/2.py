@@ -2,7 +2,7 @@ from os import name
 import numpy as np
 import pandas as pd
 
-names = ["Kids_Number","Gluc_Conc","Pressure","Insul_Amount","BMI","Diabetes_Pedegree","Age","Is_Diabet"]
+names = ["Kids_Number","Gluc_Conc","Pressure","k_s","Insul_Amount","BMI","Diabetes_Pedegree","Age","Is_Diabet"]
 df = pd.read_csv('prima-indians-diabetes.csv', names=names)
 
 print('\n____________________________\n')
@@ -47,7 +47,7 @@ print('Всего без диабета: '+str(no_diabet_count)+", в том ч�
 
 print('\n____________________________\n')
 #4.	Максимальная концентрация глюкозы у пациентов старше 50 лет.
-max_gluc_age_greater_then_50 = df[df['Age'] > 50]['Gluc_Conc'].max() 
+max_gluc_age_greater_then_50 = (df[df['Age'] > 50]['Gluc_Conc']).max() 
 print('Максимальная концентрация глюкозы у пациентов старше 50 лет равна: '+str(max_gluc_age_greater_then_50))
 
 
@@ -67,13 +67,16 @@ print(age_greater_then_60_insul_greater_then_mean_df)
 
 print('\n____________________________\n')
 #7.	Список записей с нулевыми значениями хотя бы одного параметра (за исключением первого и последнего столбцов).
-new_names = names[1:-1]
-new_df = pd.DataFrame()
+new_names = names[1:-1:]
+print(new_names)
+new_df = pd.DataFrame() 
 
-for index, row in df.iterrows():
+for index, row in df.iterrows(): 
+    curr_row = row[new_names]
     for name in new_names:
-        if(row[name]==0):
-            new_df = new_df.append(row)
+        if(curr_row[name]==0):
+            new_df = new_df.append(curr_row)
             continue
+new_df = new_df.drop_duplicates()
 print('Список записей с нулевыми значениями хотя бы одного параметра:\n')
 print(new_df)

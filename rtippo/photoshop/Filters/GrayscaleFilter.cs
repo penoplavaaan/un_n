@@ -2,7 +2,7 @@ using System;
 
 namespace MyPhotoshop
 {
-	public class GrayscaleFilter : PixelFilter
+	public class GrayscaleFilter : PixelFilter<EmptyParameters>
 	{
 		 
 		
@@ -11,9 +11,9 @@ namespace MyPhotoshop
 			return "Оттенки серого";
 		}
 
-		public GrayscaleFilter() : base(new EmptyParameters()) { }
+		 
 
-		public override Pixel ProcessPixel(Pixel original, IParameters parameters)
+		public override Pixel ProcessPixel(Pixel original, EmptyParameters parameters)
 		{
 			var lighttness = original.R + original.G + original.B;
 			lighttness /= 3;
