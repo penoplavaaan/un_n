@@ -36,7 +36,7 @@ namespace Inheritance.Geometry.Virtual
 
         public override RectangularCuboid GetBoundingBox()
         {
-            return new RectangularCuboid(Position, 2*Radius, 2*Radius, 2*Radius);
+            return new RectangularCuboid(Position, 2 * Radius, 2 * Radius, 2 * Radius);
         }
     }
 
@@ -121,7 +121,7 @@ namespace Inheritance.Geometry.Virtual
                 rectangularCuboids[i] = Parts[i].GetBoundingBox();
             }
 
-            extremePoints = new Vector3[]{ rectangularCuboids[0].minPoint, rectangularCuboids[0].maxPoint};
+            extremePoints = new Vector3[] { rectangularCuboids[0].minPoint, rectangularCuboids[0].maxPoint };
         }
 
         public override bool ContainsPoint(Vector3 point)
@@ -130,9 +130,9 @@ namespace Inheritance.Geometry.Virtual
         }
 
         public override RectangularCuboid GetBoundingBox()
-        {           
+        {
             for (int i = 1; i < rectangularCuboids.Length; i++)
-            {  
+            {
                 Vector3 t_minPoint = rectangularCuboids[i].minPoint;
                 Vector3 t_maxPoint = rectangularCuboids[i].maxPoint;
                 extremePoints[0] = new Vector3(
