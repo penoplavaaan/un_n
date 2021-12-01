@@ -1,0 +1,10 @@
+C:\un_n\rtippo\Generics\Generics.Tables\bin\Debug\Generics.Table.exe.config
+C:\un_n\rtippo\Generics\Generics.Tables\bin\Debug\Generics.Table.exe
+C:\un_n\rtippo\Generics\Generics.Tables\bin\Debug\Generics.Table.pdb
+C:\un_n\rtippo\Generics\Generics.Tables\bin\Debug\nunit.framework.dll
+C:\un_n\rtippo\Generics\Generics.Tables\bin\Debug\nunitlite.dll
+C:\un_n\rtippo\Generics\Generics.Tables\obj\Debug\Generics.Tables.csproj.AssemblyReference.cache
+C:\un_n\rtippo\Generics\Generics.Tables\obj\Debug\Generics.Tables.csproj.CoreCompileInputs.cache
+C:\un_n\rtippo\Generics\Generics.Tables\obj\Debug\Generics.Tables.csproj.CopyComplete
+C:\un_n\rtippo\Generics\Generics.Tables\obj\Debug\Generics.Table.exe
+C:\un_n\rtippo\Generics\Generics.Tables\obj\Debug\Generics.Table.pdb
