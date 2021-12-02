@@ -44,8 +44,12 @@
     <Compile Include="Filters\ParaetrizedFlter.cs" />
     <Compile Include="Filters\ParameterInfo.cs" />
     <Compile Include="Filters\PixelFilter.cs" />
+    <Compile Include="Filters\Transform\Freetransformer.cs" />
+    <Compile Include="Filters\Transform\ITransformer.cs" />
     <Compile Include="Filters\Transform\RotateParameters.cs" />
+    <Compile Include="Filters\Transform\RotateTransformer.cs" />
     <Compile Include="Filters\Transform\TransformFilter.cs" />
+    <Compile Include="Filters\Transform\TransformFilter{TParameters}.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Window\MainWindow.cs">
       <SubType>Form</SubType>
