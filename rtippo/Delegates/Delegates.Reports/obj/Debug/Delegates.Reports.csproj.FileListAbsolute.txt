@@ -1,0 +1,10 @@
+C:\OpenServer\domains\localhost\un_n\rtippo\Delegates\Delegates.Reports\bin\Debug\Delegates.Reports.exe.config
+C:\OpenServer\domains\localhost\un_n\rtippo\Delegates\Delegates.Reports\bin\Debug\Delegates.Reports.exe
+C:\OpenServer\domains\localhost\un_n\rtippo\Delegates\Delegates.Reports\bin\Debug\Delegates.Reports.pdb
+C:\OpenServer\domains\localhost\un_n\rtippo\Delegates\Delegates.Reports\bin\Debug\nunit.framework.dll
+C:\OpenServer\domains\localhost\un_n\rtippo\Delegates\Delegates.Reports\bin\Debug\nunitlite.dll
+C:\OpenServer\domains\localhost\un_n\rtippo\Delegates\Delegates.Reports\obj\Debug\Delegates.Reports.csproj.AssemblyReference.cache
+C:\OpenServer\domains\localhost\un_n\rtippo\Delegates\Delegates.Reports\obj\Debug\Delegates.Reports.csproj.CoreCompileInputs.cache
+C:\OpenServer\domains\localhost\un_n\rtippo\Delegates\Delegates.Reports\obj\Debug\Delegates.Reports.csproj.CopyComplete
+C:\OpenServer\domains\localhost\un_n\rtippo\Delegates\Delegates.Reports\obj\Debug\Delegates.Reports.exe
+C:\OpenServer\domains\localhost\un_n\rtippo\Delegates\Delegates.Reports\obj\Debug\Delegates.Reports.pdb
