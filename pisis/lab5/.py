@@ -7,6 +7,7 @@ url = 'https://soccer365.ru/competitions/13/'
 html = requests.get(url).text
 soup = Bs(html, 'html.parser')
 tables = soup.find_all('table', class_='comp_table_v2')
+
 data = {}
 i = 0
 for table in tables:
@@ -49,10 +50,14 @@ for table in tables:
 
     i += 1
 
+
 #print(data)
 df = pd.DataFrame(data.values(), columns=['team', 'name', 'role', 'goals', 'penalty', 'pass', 'games',
                                           'punishment', 'fair_play', 'ycard', 'ycard2', 'rcard'])
 #print(df)
+
+
+
 
 # Analytics----------------------------------------------------------------
 
@@ -76,13 +81,24 @@ yellow_cards = df.groupby('team')['ycard'].sum() \
                              .head(3)
 print(yellow_cards)
 
-# Список игроков, которые участвовали не во всех играх своей команды.
+####
+ 
+print("\n\n_____\n\n")
+print("Количество игр команды.")
+print("\n\n_____\n\n")
+participate_all = df.groupby('team')['games'].transform(max) == df['games']
+df1 = df[participate_all]
+#df1 = df1.groupby('team').max()
+print(df1[['team', 'games']])
+
+# Список игроков, которые участвовали во всех играх своей команды.
 # Число игр команды определить по максимальному числу матчей ее игроков
 print("\n\n_____\n\n")
 print("Список игроков, которые участвовали не во всех играх своей команды.")
 print("\n\n_____\n\n")
 not_participate = df.groupby('team')['games'].transform(max) != df['games']
-print(df[not_participate])
+df0 = df[not_participate]
+print( df0[['team','name' ,'games']])
 
 # Доля пенальти по отношению к числу голов для каждой команды.
 print("\n\n_____\n\n")
@@ -109,3 +125,5 @@ df2 = pd.DataFrame(point, columns=['team', 'point'])
 merge_df = pd.merge(df1, df2, on='team')
 res = merge_df.corr()
 print(res)
+
+a = input()
