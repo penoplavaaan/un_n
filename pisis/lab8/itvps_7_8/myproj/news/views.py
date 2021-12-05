@@ -65,11 +65,7 @@ def index(request):
     rubrics = Rubric.objects.all()
     hashtags = Hashtag.objects.all()
     articleHashtagRelationObjects = Articlehashtag.objects.all()
-
-    print(hashtags)
-    #print(articleHashtagretations)
-    
-    pre_df = []
+     
      
     for article in articles:
         print('New article. Title: '+str(article.title))
@@ -83,7 +79,7 @@ def index(request):
         
         stringified_keywords = ""
         for keyword in article_hashtags:
-            stringified_keywords += "#"+keyword+" "
+            stringified_keywords += "#"+keyword + " "
         article.keyword = stringified_keywords
         article.annotation = article.annotation[:250]+"..."
       
@@ -98,7 +94,26 @@ def rubrika(request):
 def by_rubric(request, rubric_id):
     articles = Article.objects.filter(rubric=rubric_id)
     rubrics = Rubric.objects.all()
+    hashtags = Hashtag.objects.all()
+    articleHashtagRelationObjects = Articlehashtag.objects.all()
     current_rubric = Rubric.objects.get(pk=rubric_id)
+
+    for article in articles:
+            print('New article. Title: '+str(article.title))
+            article_hashtags = []
+
+            for articleHashtagRelation in articleHashtagRelationObjects: 
+                if (articleHashtagRelation.article_id == article.id):
+                    for hashtag in hashtags:
+                        if articleHashtagRelation.hashtag_id == hashtag.id:
+                            article_hashtags.append(hashtag.name)
+            
+            stringified_keywords = ""
+            for keyword in article_hashtags:
+                stringified_keywords += "#"+keyword + " "
+            article.keyword = stringified_keywords
+            article.annotation = article.annotation[:250]+"..."
+
     context = {'articles': articles, 'rubrics': rubrics, 'current_rubric': current_rubric}
     return render(request, 'news/rubrika.html', context)
 
